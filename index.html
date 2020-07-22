@@ -3,11 +3,41 @@
 
 <head>
     <title>AngularMovieApp</title>
+    <link rel="stylesheet" href="../MovieApp/src/style.css">
     <script src="../MovieApp/libs/angular.js"></script>
     <script src="../MovieApp/app.js"></script>
 </head>
 
-<body ng-controller="MainController">
+<body>
+
+    <div ng-controller="FetchController as fetch">
+
+        <input type="button" value="GET" ng-click="fetch.getNowPlayingMovie()">
+
+        <p>Now Playing</p>
+        <ul ng-repeat="movie in fetch.arrayObjects">
+            <li>Name: {{movie.original_title}}</li>
+            <li>Popularity: {{movie.popularity}}</li>
+            <li>Release: {{movie.release_date}}</li>
+            <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
+        </ul>
+
+    </div>
+
+
+    <div ng-controller="UpcomingController as upcoming">
+
+        <input type="button" value="GET" ng-click="upcoming.getNowPlayingMovie()">
+
+        <p>Upcoming</p>
+        <ul ng-repeat="movie in upcoming.arrayObjects">
+            <li>Name: {{movie.original_title}}</li>
+            <li>Popularity: {{movie.popularity}}</li>
+            <li>Release: {{movie.release_date}}</li>
+            <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
+        </ul>
+
+    </div>
 
 </body>
 
