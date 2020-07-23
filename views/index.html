@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html ng-app="AngularJS">
+
+<head>
+    <title>AngularJS</title>
+    <script src="../libs/angular.js"></script>
+    <script src="../modules/mainModule.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../controllers/MovieIdController.js"></script>
+    <script src="../transactions/api.js"></script>
+    <script src="../services/getImage.js"></script>
+    <script src="../services/getURL.js"></script>
+    <script src="../controllers/NowPlayingController.js"></script>
+    <script src="../controllers/UpcomingController.js"></script>
+    <script src="../controllers/PopularController.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller="MovieIdController as movieIdCntr">
+
+        <div ng-controller="NowPlayingController as nowPlayingCntr">
+
+            <h2>Playing</h1>
+                <ul ng-controller="ImageController as imgCntr">
+                    <li ng-repeat="movie in nowPlayingCntr.nowPlaying">
+                        <img ng-src="{{ imgCntr.renderImage(movie) }}" ng-click="movieIdCntr.getMovieId(movie);" />
+                    </li>
+                </ul>
+        </div>
+        <hr>
+        <div ng-controller="UpcomingController as upcomingCntr">
+            <h2>Upcoming</h1>
+                <ul ng-controller="ImageController as imgCntr">
+                    <li ng-repeat="movie in upcomingCntr.upcoming">
+                        <img ng-src="{{ imgCntr.renderImage(movie) }}" ng-click="movieIdCntr.getMovieId(movie);" />
+                    </li>
+                </ul>
+        </div>
+        <hr>
+        <div ng-controller="PopularController as popularCntr">
+            <h2>Popular</h1>
+                <ul ng-controller="ImageController as imgCntr">
+                    <li ng-repeat="movie in popularCntr.popular">
+                        <img ng-src="{{ imgCntr.renderImage(movie) }}" ng-click="movieIdCntr.getMovieId(movie);" />
+                    </li>
+                </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
