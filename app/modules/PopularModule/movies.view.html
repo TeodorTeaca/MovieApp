@@ -1,0 +1,13 @@
+<div ng-controller="PopularCtrl">
+    <h2>Popular</h2>
+    <div ng-init="request();">
+        <div>
+            <ul>
+                <li ng-repeat="movie in movies">
+                    <h2>{{movie.original_title}}</h2>
+                    <img ng-src="http://image.tmdb.org/t/p/original/{{movie.poster_path}}" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
