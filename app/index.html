@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js">
+<html lang="en" ng-app="AngularJSMovieApp" class="no-js">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
+  <title>My AngularJS App</title>
+  <meta name="AngularJSMovieApp" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
@@ -13,17 +14,24 @@
 </head>
 
 <body>
+  <ul class="menu">
+    <li><a href="#!/view1">view1</a></li>
+    <li><a href="#!/view2">view2</a></li>
+  </ul>
+
   <div ng-view></div>
+
+  <header ng-include="'movie/movieView.html'"></header>
 
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
-  <script src="app.module.js"></script>
-  <script src="modules/NowPLayingModule/movies.controller.js"></script>
-  <script src="modules/NowPLayingModule/movies.service.js"></script>
-  <script src="modules/PopularModule/movies.controller.js"></script>
-  <script src="modules/PopularModule/movies.service.js"></script>
-  <script src="modules/UpcomingModule/movies.controller.js"></script>
-  <script src="modules/UpcomingModule/movies.service.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="core/version/version.js"></script>
+  <script src="core/version/version-directive.js"></script>
+  <script src="core/version/interpolate-filter.js"></script>
+  <script src="movie/movieController.js"></script>
 </body>
 
 </html>

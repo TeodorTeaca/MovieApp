@@ -2,6 +2,16 @@ logs/*
 !.gitkeep
 node_modules/
 app/lib/
+app/core/vesrion
+app/view2
+e2e-test
+.jshintrc
+travis.yml
+karma.conf.js
+LICENSE
+package.json
+package-lock.json
+README.md
 tmp
 .DS_Store
 .idea
