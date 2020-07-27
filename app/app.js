@@ -1,14 +1,13 @@
 'use strict';
 
-// Declare app level module which depends on views, and core components
 angular.module('myApp', [
   'ngRoute',
   'Angular.movieList',
-  'myApp.view2',
+  'Angular.homePage',
+  'Angular.componentPage',
   'myApp.version'
 ]).
   config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
-
-    $routeProvider.otherwise({ redirectTo: '/movieList' });
+    $routeProvider.otherwise({ redirectTo: '/homePage' });
   }]);
