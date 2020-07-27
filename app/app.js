@@ -1,13 +1,14 @@
 'use strict';
 
-const AngularJSMovieApp = angular.module('AngularJSMovieApp', [
+// Declare app level module which depends on views, and core components
+angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
+  'Angular.movieList',
   'myApp.view2',
   'myApp.version'
-]);
+]).
+  config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    $locationProvider.hashPrefix('!');
 
-AngularJSMovieApp.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
-  $routeProvider.otherwise({ redirectTo: '/view1' });
-}]);
+    $routeProvider.otherwise({ redirectTo: '/movieList' });
+  }]);

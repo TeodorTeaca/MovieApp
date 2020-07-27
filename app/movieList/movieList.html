@@ -1,0 +1,19 @@
+<p>This is the partial for MOVIES LIST.</p>
+<div>
+    <p>popular</p>
+    <span ng-repeat="movie in popular" ng-show="movie.poster_path">
+        <img ng-src="http://image.tmdb.org/t/p/original/{{movie.poster_path}}" />
+    </span>
+</div>
+<div>
+    <p>upcoming</p>
+    <span ng-repeat="movie in upcoming" ng-show="movie.poster_path">
+        <img ng-src="http://image.tmdb.org/t/p/original/{{movie.poster_path}}" />
+    </span>
+</div>
+<div>
+    <p>nowPlaying</p>
+    <span ng-repeat="movie in nowPlaying" ng-show="movie.poster_path">
+        <img ng-src="http://image.tmdb.org/t/p/original/{{movie.poster_path}}" />
+    </span>
+</div>
