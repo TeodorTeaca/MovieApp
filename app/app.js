@@ -1,11 +1,10 @@
 'use strict';
 
-angular.module('myApp', [
+angular.module('AngularJS', [
   'ngRoute',
   'Angular.movieList',
   'Angular.homePage',
-  'Angular.componentPage',
-  'myApp.version'
+  'Angular.componentPage'
 ]).
   config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');

@@ -5,9 +5,7 @@ angular.module('Angular.movieList')
             url: "@"
         },
         controller: function PosterController() {
-            // $ctrl = this;
             this.$onInit = function () {
-                // console.log(this.poster);
             }
         }
 
