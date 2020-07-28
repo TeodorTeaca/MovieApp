@@ -12,7 +12,9 @@ angular.module('Angular.movieList', ['ngRoute'])
   .controller('MovieListCtrl', ['$scope', 'Service', function ($scope, Service) {
 
     Service.request('popular')
-      .then((movies) => $scope.popular = movies);
+      .then(function (movies) {
+        $scope.popular = movies;
+      })
 
     Service.request('upcoming')
       .then((movies) => $scope.upcoming = movies);

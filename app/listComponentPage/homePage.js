@@ -12,4 +12,3 @@ angular.module('Angular.componentPage', ['ngRoute'])
   .controller('ComponentPageCtrl', [function () {
 
   }]);
-

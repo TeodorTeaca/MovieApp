@@ -5,7 +5,3 @@ app/lib/
 tmp
 .DS_Store
 .idea
-.jshintrc
-.yml
-package.json
-package-lock.json

@@ -9,7 +9,7 @@ angular.module('Angular.homePage', ['ngRoute'])
     });
   }])
 
-  .controller('HomePageCtrl', [function () {
+  .controller('HomePageCtrl', ['$scope', function ($scope,) {
+
 
   }]);
-
