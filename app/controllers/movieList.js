@@ -3,23 +3,23 @@
 angular.module('Angular.movieList', ['ngRoute'])
 
   .config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/movieList', {
-      templateUrl: 'movieList/movieList.html',
+    $routeProvider.when('/movies', {
+      templateUrl: 'views/movieList.html',
       controller: 'MovieListCtrl'
     });
   }])
 
-  .controller('MovieListCtrl', ['$scope', 'Service', function ($scope, Service) {
+  .controller('MovieListCtrl', ['$scope', 'ServiceMovies', function ($scope, ServiceMovies) {
 
-    Service.request('popular')
+    ServiceMovies.request('popular')
       .then(function (movies) {
         $scope.popular = movies;
       })
 
-    Service.request('upcoming')
+    ServiceMovies.request('upcoming')
       .then((movies) => $scope.upcoming = movies);
 
-    Service.request('now_playing')
+    ServiceMovies.request('now_playing')
       .then((movies) => $scope.nowPlaying = movies);
 
   }]);
