@@ -32,13 +32,3 @@ angular.module('Angular.login', ['ngRoute'])
         }
 
     }]);
-
-
-// const token = $location.search().request_token;
-// if (token) {
-//     ServiceLogin.getSession(token).
-//         then(() => {
-//             console.log("Wiii")
-//             // redirect to movies page
-//         })
-// }
