@@ -3,7 +3,6 @@
 angular.module('AngularJS', [
   'ngRoute',
   'Angular.movieList',
-  'Angular.homePage',
   'Angular.componentPage',
   'Angular.login'
 ])
