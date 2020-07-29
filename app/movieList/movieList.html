@@ -1,0 +1,20 @@
+<p>Movies list based controllers.</p>
+
+<div>
+    <p>Popular</p>
+    <span ng-repeat="movie in popular" ng-show="movie.poster_path">
+        <poster url="http://image.tmdb.org/t/p/original/{{movie.poster_path}}"></poster>
+    </span>
+</div>
+<div>
+    <p>Upcoming</p>
+    <span ng-repeat="movie in upcoming" ng-show="movie.poster_path">
+        <poster url="http://image.tmdb.org/t/p/original/{{movie.poster_path}}"></poster>
+    </span>
+</div>
+<div>
+    <p>Now playing</p>
+    <span ng-repeat="movie in nowPlaying" ng-show="movie.poster_path">
+        <poster url="http://image.tmdb.org/t/p/original/{{movie.poster_path}}"></poster>
+    </span>
+</div>
