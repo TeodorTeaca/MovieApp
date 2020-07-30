@@ -35,7 +35,7 @@ class LoginCtrl {
 
 angular
     .module('Angular.login', [])
-    .component('login', { templateUrl: 'authentication/login.html', controller: LoginCtrl })
+    .component('login', { templateUrl: 'components/authentication/login.html', controller: LoginCtrl })
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/login', {
             templateUrl: 'views/loginPage.html',
