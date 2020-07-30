@@ -1,41 +1,43 @@
-'use strict';
+class LoginCtrl {
+    constructor(ServiceLogin) {
+        this.servicelogin = ServiceLogin;
+    }
 
-angular.module('Angular.login', ['ngRoute'])
+    authorize() {
+        this.servicelogin.getRequestToken()
+            .then(function (token) {
+                console.log("token: ", token);
+                window.location.assign(`https://www.themoviedb.org/authenticate/${token}?redirect_to=http://localhost:8000/#!/login`);
+            })
+    };
 
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/login', {
-            templateUrl: 'authentication/login.html',
-            controller: 'LoginCtrl'
-        })
+    viewMovies = function () {
+        if (localStorage.getItem('user')) {
+            location.replace("http://localhost:8000/#!/movies")
+        } else { alert("please login"); }
+    }
 
-    }])
-
-    .controller('LoginCtrl', ['$scope', 'ServiceLogin', function ($scope, ServiceLogin) {
-
-        $scope.authorize = function () {
-            ServiceLogin.getRequestToken()
-                .then(function (token) {
-                    console.log("token: ", token);
-                    window.location.assign(`https://www.themoviedb.org/authenticate/${token}?redirect_to=http://localhost:8000/#!/login`);
-                })
-        };
-
+    $onInit() {
         const getURL = window.location.href;
         const verificationToken = getURL.match(/request_token=(.*)&approved=true/);
-
+        // delete localStorage.user;
         if (verificationToken) {
-            ServiceLogin.getSessionId(verificationToken[1])
+            this.servicelogin.getSessionId(verificationToken[1])
                 .then((res) => {
                     localStorage.setItem('user', res.data.session_id);
                     location.replace("http://localhost:8000/#!/movies")
                     console.log(res.data);
                 })
         }
+    }
 
-        $scope.viewMovies = function () {
-            if (localStorage.getItem('user')) {
-                location.replace("http://localhost:8000/#!/movies")
-            } else { alert("please login"); }
-        }
-        delete localStorage.user;
-    }]);
+}
+
+angular
+    .module('Angular.login', [])
+    .component('login', { templateUrl: 'authentication/login.html', controller: LoginCtrl })
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/login', {
+            templateUrl: 'views/loginPage.html',
+        })
+    }])

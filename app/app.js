@@ -5,6 +5,7 @@ angular.module('AngularJS', [
   'Angular.movieList',
   'Angular.componentPage',
   'Angular.login'
+
 ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
