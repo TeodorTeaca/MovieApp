@@ -21,7 +21,6 @@ class LoginCtrl {
     $onInit() {
         const getURL = window.location.href;
         const verificationToken = getURL.match(/request_token=(.*)&approved=true/);
-        // delete localStorage.user;
         if (verificationToken) {
             this.servicelogin.getSessionId(verificationToken[1])
                 .then((res) => {
@@ -35,10 +34,10 @@ class LoginCtrl {
 }
 
 angular
-    .module('Angular.login', [])
+    .module('AngularLogin', [])
     .component('login', { templateUrl: 'components/authentication/login.html', controller: LoginCtrl })
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/login', {
-            templateUrl: 'views/loginPage.html',
+            templateUrl: 'views/login.page.html',
         })
     }])

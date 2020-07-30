@@ -1,6 +1,6 @@
-angular.module('Angular.movieList')
+angular.module('AngularMovieList')
     .component('movieList', {
-        templateUrl: 'components/listComponent/list.template.html',
+        templateUrl: 'components/list.component/list.template.html',
         bindings: { path: '@' },
         controller: function ListController(ServiceMovies) {
             this.$onInit = function () {

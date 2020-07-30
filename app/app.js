@@ -2,9 +2,9 @@
 
 angular.module('AngularJS', [
   'ngRoute',
-  'Angular.movieList',
-  'Angular.componentPage',
-  'Angular.login'
+  'AngularMovieList',
+  'AngularComponentPage',
+  'AngularLogin'
 
 ])
   .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {

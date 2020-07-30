@@ -1,12 +1,12 @@
 'use strict';
 
-angular.module('Angular.movieList', ['ngRoute'])
+angular.module('AngularMovieList', ['ngRoute'])
 
   .config(['$routeProvider', function ($routeProvider) {
 
     if (localStorage.getItem('user')) {
       $routeProvider.when('/movies', {
-        templateUrl: 'views/movieList.html',
+        templateUrl: 'views/movie.list.html',
         controller: 'MovieListCtrl'
       });
     }

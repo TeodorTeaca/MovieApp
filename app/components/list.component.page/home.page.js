@@ -1,8 +1,8 @@
 'use strict';
-angular.module('Angular.componentPage', ['ngRoute'])
+angular.module('AngularComponentPage', ['ngRoute'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/componentPage', {
-      templateUrl: 'components/listComponentPage/componentPage.html',
+      templateUrl: 'components/list.component.page/componentPage.html',
       controller: 'ComponentPageCtrl'
     });
   }])
