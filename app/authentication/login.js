@@ -26,9 +26,16 @@ angular.module('Angular.login', ['ngRoute'])
         if (verificationToken) {
             ServiceLogin.getSessionId(verificationToken[1])
                 .then((res) => {
+                    localStorage.setItem('user', res.data.session_id);
                     location.replace("http://localhost:8000/#!/movies")
-                    console.log(res);
+                    console.log(res.data);
                 })
         }
 
+        $scope.viewMovies = function () {
+            if (localStorage.getItem('user')) {
+                location.replace("http://localhost:8000/#!/movies")
+            } else { alert("please login"); }
+        }
+        delete localStorage.user;
     }]);

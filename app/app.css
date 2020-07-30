@@ -37,6 +37,11 @@ img{
 #loginButton{
   position: absolute; 
   left: 50%;  
-  top: 10%;
+  top: 20%;
+}
+#moviesButton{
+  position: absolute; 
+  left: 50%;  
+  top: 40%;
 }
 
