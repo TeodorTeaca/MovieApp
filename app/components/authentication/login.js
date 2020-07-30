@@ -14,7 +14,8 @@ class LoginCtrl {
     viewMovies = function () {
         if (localStorage.getItem('user')) {
             location.replace("http://localhost:8000/#!/movies")
-        } else { alert("please login"); }
+        }
+        else { alert("please login"); }
     }
 
     $onInit() {

@@ -3,10 +3,13 @@
 angular.module('Angular.movieList', ['ngRoute'])
 
   .config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/movies', {
-      templateUrl: 'views/movieList.html',
-      controller: 'MovieListCtrl'
-    });
+
+    if (localStorage.getItem('user')) {
+      $routeProvider.when('/movies', {
+        templateUrl: 'views/movieList.html',
+        controller: 'MovieListCtrl'
+      });
+    }
   }])
 
   .controller('MovieListCtrl', ['$scope', 'ServiceMovies', function ($scope, ServiceMovies) {
