@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
   <meta name="description" content="">
-  <link rel="shortcut icon" href="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
@@ -15,24 +14,18 @@
 </head>
 
 <body>
-  <ul class="menu">
-    <li><a href="#!/login">Login Page</a></li>
-    <li><a href="#!/movieList">Movies List Controller</a></li>
-    <li><a href="#!/componentPage">Movies List Component</a></li>
-  </ul>
-
   <div ng-view></div>
 
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="movieList/movieList.js"></script>
-  <script src="components/posterComponent/poster.controller.js"></script>
-  <script src="components/listComponent/list.controller.js"></script>
-  <script src="components/listComponentPage/homePage.js"></script>
-  <script src="authentication/login.js"></script>
-  <script src="services/ServiceToken.js"></script>
-  <script src="services/requestService.js"></script>
+  <script src="modules.js"></script>
+  <script src="controllers/movie.list.js"></script>
+  <script src="components/poster.component/poster.controller.js"></script>
+  <script src="components/list.component/list.controller.js"></script>
+  <script src="components/list.component.page/home.page.js"></script>
+  <script src="components/authentication/login.js"></script>
+  <script src="services/service.login.js"></script>
+  <script src="services/request.service.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
-angular.module('Angular.movieList')
+angular.module('AngularMovieList')
     .component('poster', {
-        templateUrl: 'components/posterComponent/poster.template.html',
+        templateUrl: 'components/poster.component/poster.template.html',
         bindings: {
             url: "@"
         },
