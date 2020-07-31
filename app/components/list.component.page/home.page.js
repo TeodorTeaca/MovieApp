@@ -2,7 +2,7 @@
 angular.module('AngularComponentPage', ['ngRoute'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/componentPage', {
-      templateUrl: 'components/list.component.page/componentPage.html',
+      templateUrl: 'components/list.component.page/component.page.html',
       controller: 'ComponentPageCtrl'
     });
   }])
