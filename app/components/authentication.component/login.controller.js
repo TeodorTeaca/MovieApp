@@ -1,6 +1,6 @@
 angular.module('Angular.login')
     .component('login', {
-        templateUrl: 'components/authentication/template.login.html',
+        templateUrl: 'components/authentication.component/template.login.html',
         controller: class LoginController {
 
             constructor(ServiceLogin) {
