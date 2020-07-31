@@ -1,4 +1,4 @@
-angular.module('AngularMovieList')
+angular.module('AngularComponentPage')
     .component('poster', {
         templateUrl: 'components/poster.component/poster.template.html',
         bindings: {

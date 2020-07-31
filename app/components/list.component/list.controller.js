@@ -1,4 +1,4 @@
-angular.module('AngularMovieList')
+angular.module('AngularComponentPage')
     .component('movieList', {
         templateUrl: 'components/list.component/list.template.html',
         bindings: { path: '@' },
