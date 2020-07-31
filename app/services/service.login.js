@@ -1,6 +1,6 @@
 const API_KEY = '06f99320c4d4aafa43383b3d6c8da151';
 
-angular.module('AngularLogin').service('ServiceLogin', function ($http) {
+angular.module('Angular.login').service('ServiceLogin', function ($http) {
     return {
         getRequestToken: function () {
             return $http.get(`https://api.themoviedb.org/3/authentication/token/new?api_key=${API_KEY}`)
@@ -11,7 +11,17 @@ angular.module('AngularLogin').service('ServiceLogin', function ($http) {
 
         getSessionId: function (verificationToken) {
             return $http.post(`https://api.themoviedb.org/3/authentication/session/new?api_key=${API_KEY}`, { request_token: verificationToken })
-                .then((response) => { return response })
+                .then((response) => { return response.data.session_id })
+        },
+
+        isAuthenticated: function () {
+            const SESSION = localStorage.getItem('user');
+            if (SESSION == null) {
+                return false;
+            } else {
+                return true;
+            }
+
         }
 
     };

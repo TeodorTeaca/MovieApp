@@ -1,11 +1,12 @@
-angular.module('AngularMovieList')
+angular.module('Angular.movies')
     .component('poster', {
         templateUrl: 'components/poster.component/poster.template.html',
         bindings: {
             url: "@"
         },
         controller: function PosterController() {
-            this.$onInit = function () {
+            vm = this;
+            vm.$onInit = function () {
             }
         }
 
