@@ -5,8 +5,3 @@ angular.module('AngularJS', [
   'Angular.login',
   'Angular.movies'
 ]);
-
-angular.module('Angular.login', []);
-
-angular.module('Angular.movies', []);
-

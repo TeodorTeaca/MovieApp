@@ -1,6 +1,8 @@
 angular.module('AngularJS')
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('!');
+        $locationProvider.html5Mode(true);
+
         $routeProvider
             .when('/movies', {
                 templateUrl: 'views/movies.page.html',
