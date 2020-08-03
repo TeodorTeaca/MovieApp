@@ -1,4 +1,4 @@
-const API_KEY = '06f99320c4d4aafa43383b3d6c8da151';
+const API_KEY = 'd8bf019d0cca372bd804735f172f67e8';
 
 angular.module('Angular.login').service('ServiceLogin', function ($http) {
     return {

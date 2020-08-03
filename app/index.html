@@ -11,20 +11,29 @@
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.css">
+
 </head>
 
 <body>
   <div ng-view></div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine-html.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/boot.js"></script>
+
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
   <script src="modules.js"></script>
   <script src="routing.js"></script>
-  <script src="components/poster.component/poster.controller.js"></script>
-  <script src="components/list.component/list.controller.js"></script>
   <script src="components/authentication.component/login.controller.js"></script>
+  <script src="components/list.component/list.controller.js"></script>
+  <script src="components/poster.component/poster.controller.js"></script>
+  <script src="components/poster.component/poster.controller.spec.js"></script>
   <script src="services/service.login.js"></script>
   <script src="services/request.service.js"></script>
+  <script src="services/service.login.spec.js"></script>
 </body>
 
 </html>

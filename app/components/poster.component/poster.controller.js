@@ -9,5 +9,4 @@ angular.module('Angular.movies')
             vm.$onInit = function () {
             }
         }
-
     })
