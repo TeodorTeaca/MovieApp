@@ -8,14 +8,14 @@ angular.module('Angular.login', [])
             vm.authorize = function () {
                 se.getRequestToken()
                     .then(function (token) {
-                        window.location.assign(`https://www.themoviedb.org/authenticate/${token}?redirect_to=http://localhost:8000/#!/login`);
+                        window.location.assign(`https://www.themoviedb.org/authenticate/${token}?redirect_to=http://localhost:8000/`);
                     })
             };
 
             vm.getToken = function () {
-                const URL = $location.absUrl();
-                const VERIFICATION_TOKEN = URL.match(/request_token=(.*)&approved=true/);
-                return (VERIFICATION_TOKEN ? VERIFICATION_TOKEN[1] : null);
+                const VERIFICATION_TOKEN = $location.search();
+                const TOKEN = VERIFICATION_TOKEN.request_token;
+                return (TOKEN ? TOKEN : null);
             }
 
             const NEW_TOKEN = vm.getToken();

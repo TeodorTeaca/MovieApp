@@ -3,5 +3,6 @@
 angular.module('AngularJS', [
   'ngRoute',
   'Angular.login',
-  'Angular.movies'
+  'Angular.movies',
+  'Agular.my.list'
 ]);

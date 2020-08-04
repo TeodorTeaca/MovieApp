@@ -10,7 +10,7 @@ angular.module('AngularJS')
             .when('/login', {
                 templateUrl: 'views/login.page.html',
             })
-            .otherwise({ redirectTo: '/login' });
+            .otherwise({ redirectTo: '/movies' });
 
     }])
     .run(['$rootScope', '$location', 'ServiceLogin', function ($rootScope, $location, ServiceLogin) {
@@ -21,5 +21,4 @@ angular.module('AngularJS')
                 $location.path('/login');
             }
         });
-
     }])
