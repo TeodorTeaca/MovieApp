@@ -1,0 +1,13 @@
+<p id="titleList">Add personal list</p>
+<form name="listForm" ng-submit="$ctrl.requestBody(list)" novalidate>
+    <input type="text" name="name" placeholder="Your list name" ng-model="list.name" ng-required="true" />
+    <div ng-show="listForm.name.$touched && listForm.name.$invalid">
+        <small style="color: red; display: block; text-align: center;">Enter the name of your list</small>
+    </div>
+    <input type="text" name="description" placeholder="Your list description" ng-model="list.description"
+        ng-required="true" />
+    <div ng-show="listForm.description.$touched && listForm.description.$invalid">
+        <small style="color: red; display: block; text-align: center;">Enter the description of your list</small>
+    </div>
+    <input type="submit" value="Create" ng-disabled="listForm.$invalid" />
+</form>

@@ -1,14 +1,16 @@
 body{
-background-color: rgb(32, 32, 32);
+background-color: rgb(102, 101, 101);
+text-align: center;
 }
 
 #moviesPage{
   text-align: center;
-  color:darkorange;
+  color:green;
   font-size: 35px;
 }
+
 #loginText{
-  color: white;
+  color: green;
   position: absolute; 
   left: 86%;  
   top: 7%;
@@ -22,13 +24,13 @@ img{
   margin: 5px 5px 5px 5px;
   border-radius: 10px;
   border-style: solid;
-  border-color: darkorange;
+  border-color: green;
 }
 
 #buttonLogin {
-  background-color: darkorange;
+  background-color: green;
   border: none;
-  color: white;
+  color: black;
   padding: 8px 16px;
   text-align: center;
   font-size: 24px;
@@ -47,23 +49,58 @@ img{
 
 #buttonLogin:hover {opacity: 1}
 
-#moviesHub{
-  width: 210px;
-  height: 60px;
-  background-color: black;
-  position: absolute; 
-  left: 85%;  
-  top: 10%;
-  z-index: 1;
-  border-radius: 10px;
-}
-
 .movieTitel{
-  color:darkorange;
+  color:green;
   font-size: 20px;
   text-align: center;
 }
 
 .listMovies{
   overflow: auto;
+}
+
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  display: inline-block;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+#titleList{
+  text-align: center;
+  font-size: 20px;
+  color: green;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalit.ng-touched{
+  border: 1px solid red;
+}
+
+input[disabled="disabled"]{
+opacity: 0.4;
 }
