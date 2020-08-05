@@ -5,19 +5,22 @@ angular.module('AngularJS')
 
         $routeProvider
             .when('/movies', {
-                templateUrl: 'views/movies.page.html',
+                templateUrl: 'views/movies.page.html'
             })
             .when('/login', {
-                templateUrl: 'views/login.page.html',
+                templateUrl: 'views/login.page.html'
+            })
+            .when('/list', {
+                templateUrl: 'components/my.list/template.my.list.html',
+                controller: "MyListCtrl",
+                controllerAs: "$ctrl",
             })
             .otherwise({ redirectTo: '/movies' });
 
     }])
     .run(['$rootScope', '$location', 'ServiceLogin', function ($rootScope, $location, ServiceLogin) {
         $rootScope.$on('$routeChangeStart', function (event) {
-            if (ServiceLogin.isAuthenticated()) {
-                $location.path('/movies');
-            } else {
+            if (!ServiceLogin.isAuthenticated()) {
                 $location.path('/login');
             }
         });

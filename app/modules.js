@@ -4,5 +4,9 @@ angular.module('AngularJS', [
   'ngRoute',
   'Angular.login',
   'Angular.movies',
-  'Agular.my.list'
+  'Angular.my.list',
+  'Angular.my.list.service',
+  'Angular.login.serivce',
+  'Angular.movies.service'
+
 ]);

@@ -1,8 +1,9 @@
-const SESSION = localStorage.getItem("user");
-angular.module('Agular.my.list')
+
+angular.module('Angular.my.list.service', [])
     .service('ServiceMyList', function ($http) {
         return {
             request: function (listName, listDescription) {
+                const SESSION = localStorage.getItem("user");
                 requestBody = {
                     name: listName,
                     description: listDescription,

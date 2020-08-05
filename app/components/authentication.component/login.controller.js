@@ -1,4 +1,4 @@
-angular.module('Angular.login', [])
+angular.module('Angular.login', ['ngRoute'])
     .component('login', {
         templateUrl: 'components/authentication.component/template.login.html',
         controller: function LoginController(ServiceLogin, $location) {
@@ -23,7 +23,7 @@ angular.module('Angular.login', [])
                 se.getSessionId(NEW_TOKEN)
                     .then((session) => {
                         localStorage.setItem('user', session);
-                        $location.path('/movies');
+                        $location.url('/movies').replace();
                     })
             }
 

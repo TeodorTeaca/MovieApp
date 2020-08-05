@@ -1,4 +1,4 @@
-angular.module('Angular.movies', [])
+angular.module('Angular.movies', ['ngRoute'])
     .component('movieList', {
         templateUrl: 'components/list.component/list.template.html',
         bindings: { path: '@' },
