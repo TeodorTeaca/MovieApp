@@ -1,19 +1,24 @@
 (function () {
     function MyListController(ServiceMyList) {
         let se = ServiceMyList;
-
         this.requestBody = function (list) {
             if (list.name && list.description) {
                 se.request(list.name, list.description)
                     .then((res) => {
-                        localStorage.setItem("list", res);
+                        localStorage.setItem("list", res.data.list_id);
                         this.message = 'Your list has been created!';
-                        alert("ADDED");
                     }).catch((res) => {
-                        this.message = res.data.status_message;
+                        let status_code = res.data.status_code;
+                        if (status_code === 34) {
+                            this.message = 'The resource you requested could not be found';
+                        } else if (status_code === 7) {
+                            this.message = 'Invalid API key: You must be granted a valid key';
+                        } else if (res === 404) {
+                            this.message = 'SESSION is not defined';
+                        }
                     })
             } else {
-                this.submitEnabled = false;
+                this.submit = false;
             }
         };
     }
@@ -22,50 +27,3 @@
         .module('Angular.my.list', ['ngRoute'])
         .controller("MyListCtrl", MyListController)
 })()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// angular.module('Angular.my.list', ['ngRoute'])
-//     .component('list', {
-//         templateUrl: 'components/my.list/template.my.list.html',
-//         controller: function MyListController(ServiceMyList) {
-//             let vm = this;
-//             let se = ServiceMyList;
-//             vm.requestBody = function (list) {
-//                 if (list.name && list.description) {
-//                     se.request(list.name, list.description)
-//                         .then((res) => {
-//                             localStorage.setItem("list", res);
-//                             vm.message = 'Your list has been created!';
-//                         }).catch((res) => {
-//                             vm.message = res.data.status_message;
-//                         })
-//                 } else {
-//                     vm.submitEnabled = false;
-//                 }
-//             };
-//         }
-//     })

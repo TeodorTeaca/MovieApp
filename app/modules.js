@@ -8,5 +8,4 @@ angular.module('AngularJS', [
   'Angular.my.list.service',
   'Angular.login.serivce',
   'Angular.movies.service'
-
 ]);

@@ -11,7 +11,7 @@ angular.module('Angular.my.list.service', [])
                 };
                 return $http.post(`https://api.themoviedb.org/3/list?api_key=${API_KEY}&session_id=${SESSION}`, requestBody)
                     .then((response) => {
-                        return response.data.list_id;
+                        return response;
                     })
             }
         }

@@ -1,12 +1,20 @@
-angular.module('Angular.movies', ['ngRoute'])
-    .component('movieList', {
-        templateUrl: 'components/list.component/list.template.html',
-        bindings: { path: '@' },
-        controller: function ListController(ServiceMovies) {
-            vm = this;
-            vm.$onInit = function () {
-                ServiceMovies.request(this.path)
-                    .then((result) => this.type = result);
-            };
-        },
-    });
+(function () {
+
+    function ListController(ServiceMovies) {
+        let se = ServiceMovies;
+        let vm = this;
+        vm.$onInit = function () {
+            se.request(vm.path)
+                .then((res) => this.type = res);
+        };
+    }
+
+    angular.module('Angular.movies', ['ngRoute'])
+        .controller('ListController', ListController)
+        .component('movieList', {
+            templateUrl: 'components/list.component/list.template.html',
+            bindings: { path: '@' },
+            controller: 'ListController'
+
+        })
+})()
